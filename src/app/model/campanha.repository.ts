@@ -53,7 +53,22 @@ export class CampanhaRepository {
   }
 
   generateRandomIdCampanha(): number {
-    return Math.round(Math.random() * 10000);
+    let idCampRandom: number;
+
+    let idCampanhaRandom = () => {
+      idCampRandom = Math.round(Math.random() * 10000);
+
+      const campanhaIdJaExiste = this.campanhas.some((campanha) => {
+        campanha.id === idCampRandom;
+      });
+
+      if (campanhaIdJaExiste) {
+        idCampanhaRandom();
+      }
+    };
+    idCampanhaRandom();
+
+    return idCampRandom;
   }
 
   getROICampanha(

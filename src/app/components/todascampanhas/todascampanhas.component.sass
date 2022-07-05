@@ -1,0 +1,41 @@
+@import "../../sass/_variables"
+
+.todas-campanhas-layout
+  margin-bottom: $media-mobile
+
+  @media (min-width: $screen-lg-min)
+    margin-bottom: $media
+
+.container-titulo
+  display: none
+  justify-content: space-between
+
+  padding: 1.5rem 0
+  border-bottom: 1px solid $cinza-borda
+
+  @media (min-width: 48rem)
+    display: flex
+
+.todas-campanhas__titulo
+  width: 10.5%
+
+  // background-color: red
+  overflow: hidden
+  text-overflow: ellipsis
+
+  font-weight: 700
+  font-size: 1.2rem
+
+  color: $preto
+
+.fonte,
+.acoes
+  width: 5%
+
+.campanha
+  width: 20.5%
+
+.acoes
+  display: flex
+  justify-content: flex-end
+

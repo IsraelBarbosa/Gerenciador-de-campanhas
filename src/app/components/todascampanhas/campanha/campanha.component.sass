@@ -1,0 +1,187 @@
+@import "../../../sass/_variables"
+
+.campanha-layout
+  margin-bottom: $media-mobile
+
+  @media (min-width: $screen-md-min)
+    margin-bottom: 0
+
+.campanha
+  position: relative
+
+  padding: 1rem 35px 1rem 1rem
+  border: 1px solid $cinza-borda
+  border-radius: .4rem
+
+  background-color: $branco-medio
+
+  box-sizing: border-box
+
+  @media (min-width: $screen-md-min)
+    padding: 1.5rem 0
+    border: none
+    border-bottom: 1px solid $cinza-borda
+
+    background-color: $branco
+
+
+.campanha div:nth-child(odd),
+.campanha div:nth-child(even):not(:last-child)
+  overflow: hidden
+  text-overflow: ellipsis
+
+.campanha div:nth-child(odd)
+  width: 35%
+  // background-color: $cinza-claro
+
+  @media (min-width: 28.125rem)
+    width: 22%
+
+.campanha div:nth-child(even):not(:last-child)
+  width: 60%
+  // background-color: red
+
+  @media (min-width: 28.125rem)
+    width: 22%
+
+.campanha div:nth-child(odd),
+.campanha div:nth-child(even):not(:last-child)
+  @media (min-width: $screen-md-min)
+    width: 10.5%
+
+.campanha div:nth-child(1)
+  width: auto
+
+  @media (min-width: $screen-md-min)
+    width: 5%
+
+#titulo-campanha
+  width: 80%
+  // background-color: red
+
+  @media (min-width: 28.125rem)
+    width: 60%
+
+  @media (min-width: $screen-md-min)
+    width: 20.5%
+
+.campanha .container-botoes
+  @media (min-width: $screen-md-min)
+    display: flex
+    justify-content: flex-end
+    width: 5%
+
+.campanha-layout .campanha
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
+
+.container-botoes
+  position: absolute
+  top: 0
+  right: 0
+
+  display: flex
+  align-items: flex-end
+
+  height: 100%
+  padding: 0 .5rem
+  border-left: 1px solid $cinza-borda
+
+  @media (min-width: $screen-md-min)
+    position: static
+
+    display: block
+    height: auto
+    padding: 0
+    border: none
+
+.campanha__img,
+.container-titulo-campanha,
+.container-titulo-investimento,
+.container-titulo-faturamento,
+.container-titulo-inicio,
+.container-titulo-termino,
+.container-titulo-roi,
+.container-botoes
+  margin-bottom: 1rem
+
+  @media (min-width: $screen-md-min)
+    margin-bottom: 0rem
+
+.campanha__titulo-campanha,
+.campanha__titulo-investimento,
+.campanha__titulo-faturamento,
+.campanha__titulo-inicio,
+.campanha__titulo-termino,
+.campanha__titulo-roi
+  font-size: 1rem
+  font-weight: 600
+
+  color: $cinza-escuro
+
+  @media (min-width: $screen-md-min)
+    display: none
+
+.campanha__descricao-campanha
+  display: block
+
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.campanha__descricao-campanha,
+.campanha__descricao-investimento,
+.campanha__descricao-faturamento,
+.campanha__descricao-inicio,
+.campanha__descricao-termino,
+.campanha__descricao-roi
+  font-size: 1.4rem
+  font-weight: 600
+
+  color: $preto
+
+  @media (min-width: $screen-md-min)
+    color: $cinza-escuro
+
+.campanha__descricao-faturamento
+  color: $verde-claro
+
+.campanha__btn-editar
+  position: relative
+
+  border: none
+
+  background-color: transparent
+
+  z-index: 1
+
+.btn-editar__container-botoes
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translate(-100%, -50%)
+
+  display: none
+  border-radius: 4px
+  box-shadow: 0 5px 10px 1px $cinza-claro
+
+  background-color: $branco
+
+  @media (min-width:61.9375rem)
+    transform: translate(-90%, 10%)
+
+.btn-editar__editar,
+.btn-editar__excluir
+  padding: .8rem 3.3rem
+
+  color: $cinza-escuro
+
+.btn-editar__editar,
+.btn-editar__excluir
+ &:hover
+  text-decoration: underline
+
+.btn-editar__editar
+  border-bottom: 1px solid $cinza-claro

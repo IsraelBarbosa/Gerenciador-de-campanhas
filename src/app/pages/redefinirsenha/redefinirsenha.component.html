@@ -1,0 +1,21 @@
+<div class="redefinir-senha-page-layout">
+  <div class="container-left">
+    <app-eduzzcampaignmanager></app-eduzzcampaignmanager>
+  </div>
+  <div class="container-right">
+    <app-header [displayHeaderPerfil]="false"></app-header>
+    <div class="container container-right__main">
+      <div class="redefinir-senha-layout">
+        <h1 class="redefinir-senha__titulo">Redefinir senha</h1>
+        <p class="redefinir-senha__paragrafo">Defina sua nova senha</p>
+      </div>
+      <app-formredefinirsenha></app-formredefinirsenha>
+      <div class="possui-conta-layout">
+        <p class="possui-conta__paragrafo">Já possui uma conta?</p>
+        <a class="possui-conta__link" routerLink="/login"
+          >Clique aqui</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

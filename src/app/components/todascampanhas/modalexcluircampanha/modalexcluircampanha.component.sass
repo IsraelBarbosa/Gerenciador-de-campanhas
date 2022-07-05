@@ -1,0 +1,103 @@
+@import "../../../sass/_variables"
+
+.modal-excluir-campanha-layout
+  position: fixed
+  top: 0
+  left: 0
+
+  width: 100vw
+  height: 100vh
+  background-color: #00000070
+
+  overflow: hidden
+
+.exibir
+  display: block
+
+.esconder
+  display: none
+
+.modal-excluir-campanha
+  position: relative
+
+  @media ( min-width: $screen-md-min )
+  display: flex
+  justify-content: space-between
+  flex-direction: column
+
+  padding: 1.6rem
+  border-radius: .8rem
+  box-shadow: 0px 8px 8px $preto
+
+
+
+
+.modal-excluir-campanha__titulo
+  margin-bottom: .8rem
+
+  font-size: 1.6rem
+  font-weight: 600
+
+  color: $roxo
+
+.modal-excluir-campanha__paragrafo
+  margin-bottom: 1.6rem
+
+  font-size: 1.4rem
+  font-weight: 400
+
+  color: $cinza-escuro
+
+.modal-excluir-campanha
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+  width: 26rem
+  height: 21rem
+
+  background-color: $branco
+
+.container-botoes
+  display: flex
+  justify-content: center
+  align-content: center
+  flex-direction: column
+
+  @media ( min-width: $screen-md-min )
+    flex-direction: row-reverse
+    justify-content: flex-start
+
+.container-botoes app-btnlaranja
+  margin-bottom: .8rem
+
+  @media ( min-width: $screen-md-min )
+    margin-bottom: 0
+
+.modal-excluir-campanha__btn-cancelar
+  padding: 1rem 1.5rem
+  border: none
+
+  color: $laranja
+  background-color: transparent
+
+  transition: color .5s
+
+  &:hover
+    color: $preto
+
+  @media ( min-width: $screen-md-min )
+    margin-right: 1.6rem
+
+.modal-excluir-campanha__btn-fechar
+  position: absolute
+  top: 10px
+  right: 10px
+
+  border: none
+
+  background-color: transparent
+
+.btn-fechar__svg-close
+  color: $cinza-escuro

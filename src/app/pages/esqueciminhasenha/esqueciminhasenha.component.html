@@ -1,0 +1,21 @@
+<div class="esqueci-minha-senha-page-layout">
+  <div class="container-left">
+    <app-eduzzcampaignmanager></app-eduzzcampaignmanager>
+  </div>
+  <div class="container-right">
+    <app-header [displayHeaderPerfil]="false"></app-header>
+    <div class="container container-right__main">
+      <div class="esqueci-minha-senha-layout">
+        <h1 class="esqueci-minha-senha__titulo">Esqueci minha senha</h1>
+        <p class="esqueci-minha-senha__paragrafo">Insira seu e-mail cadastrado para recuperar sua senha</p>
+      </div>
+      <app-formesqueciminhasenha></app-formesqueciminhasenha>
+      <div class="possui-conta-layout">
+        <p class="possui-conta__paragrafo">Já possui uma conta?</p>
+        <a class="possui-conta__link" routerLink="/login"
+          >Clique aqui</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

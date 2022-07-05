@@ -1,0 +1,65 @@
+@import "../../sass/_variables"
+
+.codigo-verificacao-page-layout
+  display: flex
+
+  width: 100vw
+  height: 100vh
+
+.container-left
+  display: none
+
+  @media (min-width:  $screen-xl-min)
+    display: block
+    width: 50%
+
+.container-right
+  width: 100%
+
+  @media (min-width:  $screen-xl-min)
+    width: 50%
+
+.container-right__main
+  @media (min-width:  $screen-xl-min)
+    width: 70%
+    margin: 0 auto
+
+.codigo-verificacao-layout
+  margin-bottom: 2.5rem
+
+.codigo-verificacao__titulo
+  font-size: 2.4rem
+  font-weight: 700
+
+  color: $preto
+
+  margin-bottom: 2.4rem
+
+  @media ( min-width:  $screen-md-min)
+    font-size: 3.2rem
+
+.codigo-verificacao__paragrafo
+  font-size: 1.4rem
+
+  color: $cinza-escuro
+
+  @media ( min-width:  $screen-md-min)
+    font-size: 1.6rem
+
+.possui-conta__paragrafo
+  margin-bottom: 0
+
+  font-size: 1.2rem
+
+  color: $cinza-escuro
+
+  @media ( min-width:  $screen-md-min)
+    font-size: 1.4rem
+
+.possui-conta__link
+  font-size: 1.2rem
+
+  color: $roxo
+
+  @media ( min-width:  $screen-md-min)
+    font-size: 1.4rem

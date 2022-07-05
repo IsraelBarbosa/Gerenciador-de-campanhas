@@ -1,0 +1,45 @@
+@import "../../sass/_variables"
+
+.alerta-campanha-criada
+  position: fixed
+  right: 0
+  bottom: 0
+  z-index: 10
+
+  width: 31.2rem
+  padding: 1.8rem
+  border-radius: 4px
+
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  background-color: $verde-claro
+
+.alerta-campanha-criada__svg
+  color: $branco
+
+.alerta-campanha-criada__paragrafo
+  margin: 0
+
+  font-size: 1.4rem
+  font-weight: 600
+
+  color: $branco
+
+.alerta-campanha-criada__cronometro
+  position: absolute
+  left: 0
+  bottom: 0
+
+  height: 1rem
+
+  background-color: #92ea95a8
+
+  animation: cronometro 3s
+
+@keyframes cronometro
+  0%
+    width: 100%
+  100%
+    width: 0%

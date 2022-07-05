@@ -1,0 +1,21 @@
+<div class="criar-conta-page-layout">
+  <div class="container-left">
+    <app-eduzzcampaignmanager></app-eduzzcampaignmanager>
+  </div>
+  <div class="container-right">
+    <app-header [displayHeaderPerfil]="false"></app-header>
+    <div class="container container-right__main">
+      <div class="criar-conta-layout">
+        <h1 class="criar-conta__titulo">Criar conta</h1>
+        <p class="criar-conta__paragrafo">
+          Não possui uma conta? Cadastre-se agora
+        </p>
+      </div>
+      <app-formcriarconta></app-formcriarconta>
+      <div class="possui-conta-layout">
+        <p class="possui-conta__paragrafo">Já possui uma conta?</p>
+        <a class="possui-conta__link" routerLink="/login"> Clique aqui </a>
+      </div>
+    </div>
+  </div>
+</div>

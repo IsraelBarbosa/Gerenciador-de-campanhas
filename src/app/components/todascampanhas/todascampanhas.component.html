@@ -1,0 +1,25 @@
+<div class="todas-campanhas-layout">
+  <div class="container">
+    <div class="todas-campanhas" *ngIf="getCampanhas().length >= 1">
+      <div class="container-titulo">
+        <span class="todas-campanhas__titulo fonte">Fonte</span>
+        <span class="todas-campanhas__titulo campanha">Campanha</span>
+        <span class="todas-campanhas__titulo">Investimento</span>
+        <span class="todas-campanhas__titulo">Faturamento</span>
+        <span class="todas-campanhas__titulo">Início</span>
+        <span class="todas-campanhas__titulo">Término</span>
+        <span class="todas-campanhas__titulo">ROI</span>
+        <span class="todas-campanhas__titulo acoes">Ações</span>
+      </div>
+      <div class="container-campanhas" *ngFor="let campanha of getCampanhas()">
+        <app-campanha
+          [campanha]="campanha"
+        ></app-campanha>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-nenhumacampanhaencontrada *ngIf="getCampanhas().length <= 0"></app-nenhumacampanhaencontrada>
+
+<app-modalexcluircampanha></app-modalexcluircampanha>

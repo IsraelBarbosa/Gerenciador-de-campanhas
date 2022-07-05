@@ -1,0 +1,35 @@
+<div class="form-codigo-verificacao-layout">
+  <form
+    class="form-codigo-verificacao"
+    [formGroup]="formCodigoVerificao"
+    (submit)="codigoVerificao()"
+  >
+    <div class="container-input">
+      <label class="form-codigo-verificacao__label" for="email"
+        >Código de Verificação</label
+      >
+      <input
+        class="form-codigo-verificacao__input"
+        type="text"
+        maxlength="5"
+        formControlName="codigoVerificacao"
+        (input)="formatarInput($event.target)"
+      />
+      <div
+        class="alert alert-danger form-codigo-verificacao__input-erro"
+        *ngIf="codigoVerificacao.invalid && (codigoVerificacao.dirty || codigoVerificacao.touched)"
+      >
+        <p class="input-erro__texto" *ngIf="codigoVerificacao.errors.required">
+          Código de verificação é obrigatório
+        </p>
+      </div>
+    </div>
+    <app-btnlaranja
+      [formInvalid]="formCodigoVerificao.invalid"
+      buttonType="submit"
+      [displayIcon]="false"
+      [btnBig]="true"
+      innerText="Recuperar Senha"
+    ></app-btnlaranja>
+  </form>
+</div>

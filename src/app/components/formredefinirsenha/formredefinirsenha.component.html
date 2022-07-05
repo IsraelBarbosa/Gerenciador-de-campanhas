@@ -1,0 +1,92 @@
+<div class="form-redefinir-senha-layout">
+  <form
+    class="form-redefinir-senha"
+    [formGroup]="formRedefinirSenha"
+    (submit)="redefinirSenha()"
+  >
+    <div class="container-input">
+      <label class="form-redefinir-senha__label" for="senha">Senha</label>
+      <input
+        class="form-redefinir-senha__input"
+        type="password"
+        formControlName="senha"
+        #inputSenha
+      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-eye-fill form-redefinir-senha__icon"
+        viewBox="0 0 16 16"
+        (click)="mostrarSenha(inputSenha)"
+      >
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+        <path
+          d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+        />
+      </svg>
+      <div
+        class="alert alert-danger form-redefinir-senha__input-erro"
+        *ngIf="f.senha.invalid && (f.senha.dirty || f.senha.touched)"
+      >
+        <p class="input-erro__texto" *ngIf="f.senha.errors.required">
+          Senha é obrigatório
+        </p>
+        <p class="input-erro__texto" *ngIf="f.senha.errors.minlength">
+          Mínimo 6 caracteres
+        </p>
+      </div>
+    </div>
+    <div class="container-input">
+      <label class="form-redefinir-senha__label" for="senha"
+        >Confirmar nova senha</label
+      >
+      <input
+        class="form-redefinir-senha__input"
+        type="password"
+        formControlName="confirmarsenha"
+        #inputConfirmarSenha
+      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-eye-fill form-redefinir-senha__icon"
+        viewBox="0 0 16 16"
+        (click)="mostrarSenha(inputConfirmarSenha)"
+      >
+        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+        <path
+          d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+        />
+      </svg>
+      <div
+        class="alert alert-danger form-redefinir-senha__input-erro"
+        *ngIf="
+          f.confirmarsenha.invalid &&
+          (f.confirmarsenha.dirty ||
+            f.confirmarsenha.touched)
+        "
+      >
+        <p class="input-erro__texto" *ngIf="f.confirmarsenha.errors.required">
+          Confirmar senha é obrigatório
+        </p>
+        <p class="input-erro__texto" *ngIf="f.confirmarsenha.errors.minlength">
+          Mínimo 6 caracteres
+        </p>
+        <p class="input-erro__texto" *ngIf="f.confirmarsenha.errors.confirmedValidator">
+          As senhas não sao iguais
+        </p>
+      </div>
+    </div>
+    <app-btnlaranja
+      [formInvalid]="formRedefinirSenha.invalid"
+      buttonType="submit"
+      [displayIcon]="false"
+      [btnBig]="true"
+      innerText="Redefinir Senha"
+    ></app-btnlaranja>
+  </form>
+</div>

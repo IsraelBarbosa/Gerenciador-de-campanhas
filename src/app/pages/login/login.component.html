@@ -1,0 +1,21 @@
+<div class="login-page-layout">
+  <div class="container-left">
+    <app-eduzzcampaignmanager></app-eduzzcampaignmanager>
+  </div>
+  <div class="container-right">
+    <app-header [displayHeaderPerfil]="false"></app-header>
+    <div class="container container-right__main">
+      <div class="login-layout">
+        <h1 class="login__titulo">Entrar</h1>
+        <p class="login__paragrafo">Preencha seus dados para entrar</p>
+      </div>
+      <app-formlogin></app-formlogin>
+      <div class="possui-conta-layout">
+        <p class="possui-conta__paragrafo">Ainda não tem uma conta?</p>
+        <a class="possui-conta__link" routerLink="/criarconta"
+          >Crie uma conta agora</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

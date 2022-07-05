@@ -1,0 +1,36 @@
+<header class="header-layout">
+  <div class="container">
+    <div class="header">
+      <a routerLink="/listagemdecampanhas">
+        <img
+          class="header__logo"
+          src="../../../assets/images/eduzzLogo.png"
+          alt="eduzz-logo"
+        />
+      </a>
+
+      <div class="header__perfil" *ngIf="displayHeaderPerfil">
+        <div class="container-perfil" (click)="mostrarOuOcultarNavPerfil()">
+          <img
+            class="header__img-perfil"
+            src="../../../assets/images/header/fotoPerfil.png"
+            alt="foto perfil"
+          />
+          <div class="container-nome-perfil">
+            <span class="header__nome-perfil">{{
+              "THaÍS OLIVeIRA MATOS" | uppercase
+            }}</span>
+            <img
+              src="../../../assets/images/header/setaDown.png"
+              alt="mostrar menu"
+            />
+          </div>
+        </div>
+
+        <div class="header__nav-perfil" [style.display]="mostrarNavPerfil">
+          <a class="header__nav-perfil__link" routerLink="/login">Sair</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

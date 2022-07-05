@@ -1,0 +1,90 @@
+@import "../../sass/_variables"
+
+.cadastro-de-campanha-layout
+  margin-bottom: $grande
+
+.campanhas-titulo
+  margin-bottom: $media-mobile
+
+  @media (min-width: $screen-md-min)
+    margin-bottom: $media
+
+.container-label-e-input
+  position: relative
+
+.cadastro-de-campanha__label
+  position: absolute
+  top: 0
+  left: 3rem
+  transform: translateY(-60%)
+
+  padding: 0 5px
+
+  font-size: 1.2rem
+  font-weight: 600
+
+  color: $cinza-escuro
+  background-color: $branco
+
+.container-input-e-alert
+  margin-bottom: $media-mobile
+
+.cadastro-de-campanha__input
+  width: 100%
+  padding: .8rem 2rem
+
+  border: 1px solid $cinza-claro
+  border-radius: 4px
+
+  font-size: 1.4rem
+  font-weight: 400
+
+  color: $cinza-escuro
+  background-color: $branco
+
+.cadastro-de-campanha-input-alert
+  margin-top: .5rem
+
+.cadastro-de-campanha-input-alert__texto
+  font-size: 1rem
+
+input.ng-valid,
+select.ng-valid
+  border: 1px solid #42A948
+
+.cadastro-de-campanha__icon
+  position: absolute
+  top: 0
+  right: 3rem
+  transform: translate(0%, 65%)
+
+  color: $cinza-escuro
+
+.container-btn-laranja-e-cancel
+  display: flex
+  flex-direction: column
+
+  margin-top: $media-mobile
+
+  @media (min-width: $screen-sm-min)
+    flex-direction: row-reverse
+    justify-content: center
+
+.btn-laranja
+  @media (min-width: $screen-sm-min)
+    width: auto
+
+.cadastro-de-campanha__btn
+  width: 100%
+  padding: .9rem 4rem
+  border: none
+  margin-top: $media-mobile - .5rem
+  border-radius: .4rem
+
+  color: $roxo
+  background-color: $branco
+
+  @media (min-width: $screen-sm-min)
+    width: auto
+    margin-right: 3.2rem
+    margin-top: 0

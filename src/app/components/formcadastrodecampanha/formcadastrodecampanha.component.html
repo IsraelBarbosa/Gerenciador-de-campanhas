@@ -1,0 +1,261 @@
+<div class="cadastro-de-campanha-layout">
+  <div class="container">
+    <div class="cadastro-de-campanha">
+      <form
+        class="cadastro-de-campanha__form"
+        [formGroup]="formCadastroCampanha"
+        (submit)="cadastrarCampanha()"
+      >
+        <div class="row">
+          <div class="col-sm-12 container-label-e-input">
+            <label class="cadastro-de-campanha__label" for="descCampanha"
+              >Nome da campanha</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                type="text"
+                class="cadastro-de-campanha__input"
+                id="descCampanha"
+                formControlName="descCampanha"
+                (input)="formatarValueOnlyLettersSpaces($event.target)"
+              />
+              <div
+                *ngIf="
+                  descCampanha.invalid &&
+                  (descCampanha.dirty || descCampanha.touched)
+                "
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="descCampanha.errors.required"
+                >
+                  Nome é obrigatório
+                </div>
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="descCampanha.errors.minlength"
+                >
+                  Mínimo 3 caracteres
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label class="cadastro-de-campanha__label" for="linkCampanha"
+              >Link</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                class="cadastro-de-campanha__input"
+                type="text"
+                id="linkCampanha"
+                formControlName="link"
+              />
+              <div
+                *ngIf="link.invalid && (link.dirty || link.touched)"
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="link.errors.required"
+                >
+                  Link é obrigatório
+                </div>
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="link.errors.minlength"
+                >
+                  Mínimo 8 caracteres
+                </div>
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="link.errors.forbiddenLink"
+                >
+                  Link inválido
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <label class="cadastro-de-campanha__label" for="fonteCampanha"
+              >Fonte da campanha</label
+            >
+            <div class="container-input-e-alert">
+              <select
+                class="cadastro-de-campanha__input"
+                id="fonteCampanha"
+                formControlName="fonte"
+                (change)="changeFonteCampanha($event.target)"
+              >
+                <option value="">Selecione uma opção</option>
+                <option value="facebook">Facebook</option>
+                <option value="instagram">Instagram</option>
+                <option value="google">Google</option>
+              </select>
+              <div
+                *ngIf="fonte.invalid && (fonte.dirty || fonte.touched)"
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="fonte.errors.required"
+                >
+                  Selecione uma campanha
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="cadastro-de-campanha__label" for="valorInvestido"
+              >Valor investido</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                type="text"
+                class="cadastro-de-campanha__input"
+                id="valorInvestido"
+                formControlName="investimento"
+                prefix="R$ "
+                thousandSeparator="."
+                [allowNegativeNumbers]="false"
+                [dropSpecialCharacters]="false"
+                mask="separator.2"
+              />
+              <div
+                *ngIf="
+                  investimento.invalid &&
+                  (investimento.dirty || investimento.touched)
+                "
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="investimento.errors.forbiddenDinheiro"
+                >
+                  Valor inválido
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <label class="cadastro-de-campanha__label" for="valorFaturado"
+              >Valor faturado (opcional)</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                type="text"
+                class="cadastro-de-campanha__input"
+                id="valorFaturado"
+                formControlName="faturamento"
+                prefix="R$ "
+                thousandSeparator="."
+                [allowNegativeNumbers]="true"
+                mask="separator.2"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 container-label-e-input">
+            <label class="cadastro-de-campanha__label" for="dataInicio"
+              >Data de inicio</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                type="text"
+                class="cadastro-de-campanha__input"
+                id="dataInicio"
+                formControlName="inicio"
+                [dropSpecialCharacters]="false"
+                mask="d0/M0/0000"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-calendar cadastro-de-campanha__icon"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                />
+              </svg>
+              <div
+                *ngIf="inicio.invalid && (inicio.dirty || inicio.touched)"
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="inicio.errors.forbiddenData"
+                >
+                  Data inválida
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 container-label-e-input">
+            <label class="cadastro-de-campanha__label" for="dataTermino"
+              >Data de término</label
+            >
+            <div class="container-input-e-alert">
+              <input
+                type="text"
+                class="cadastro-de-campanha__input"
+                id="dataTermino"
+                formControlName="termino"
+                [dropSpecialCharacters]="false"
+                mask="d0/M0/0000"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-calendar cadastro-de-campanha__icon"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                />
+              </svg>
+              <div
+                *ngIf="termino.invalid && (termino.dirty || termino.touched)"
+                class="alert alert-danger cadastro-de-campanha-input-alert"
+              >
+                <div
+                  class="cadastro-de-campanha-input-alert__texto"
+                  *ngIf="termino.errors.forbiddenData"
+                >
+                  Data inválida
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-btn-laranja-e-cancel">
+          <app-btnlaranja
+            [formInvalid]="formCadastroCampanha.invalid"
+            buttonType="submit"
+            [displayIcon]="false"
+            innerText="Salvar campanha"
+            [exibirAlertaCampanhaCadastrada]="true"
+          ></app-btnlaranja>
+          <button
+            class="cadastro-de-campanha__btn"
+            routerLink="/listagemdecampanhas"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

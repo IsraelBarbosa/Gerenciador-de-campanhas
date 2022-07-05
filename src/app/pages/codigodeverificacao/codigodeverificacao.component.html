@@ -1,0 +1,21 @@
+<div class="codigo-verificacao-page-layout">
+  <div class="container-left">
+    <app-eduzzcampaignmanager></app-eduzzcampaignmanager>
+  </div>
+  <div class="container-right">
+    <app-header [displayHeaderPerfil]="false"></app-header>
+    <div class="container container-right__main">
+      <div class="codigo-verificacao-layout">
+        <h1 class="codigo-verificacao__titulo">Esqueci minha senha</h1>
+        <p class="codigo-verificacao__paragrafo">
+          Informe o token que foi enviado no seu e-mail
+        </p>
+      </div>
+      <app-formcodigoverificacao></app-formcodigoverificacao>
+      <div class="possui-conta-layout">
+        <p class="possui-conta__paragrafo">Já possui uma conta?</p>
+        <a class="possui-conta__link" routerLink="/login">Clique aqui</a>
+      </div>
+    </div>
+  </div>
+</div>

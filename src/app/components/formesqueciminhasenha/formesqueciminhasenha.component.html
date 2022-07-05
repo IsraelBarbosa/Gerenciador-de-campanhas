@@ -1,0 +1,34 @@
+<div class="form-esqueci-minha-senha-layout">
+    <form
+      class="form-esqueci-minha-senha"
+      [formGroup]="formEsqueciMinhaSenha"
+      (submit)="esqueciMinhaSenha()"
+    >
+      <div class="container-input">
+        <label class="form-esqueci-minha-senha__label" for="email">E-mail</label>
+        <input
+          class="form-esqueci-minha-senha__input"
+          type="email"
+          formControlName="email"
+        />
+        <div
+          class="alert alert-danger form-esqueci-minha-senha__input-erro"
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+        >
+          <p class="input-erro__texto" *ngIf="email.errors.required">
+            E-mail é obrigatório
+          </p>
+          <p class="input-erro__texto" *ngIf="email.errors.forbiddenEmail">
+            E-mail inválido
+          </p>
+        </div>
+      </div>
+      <app-btnlaranja
+        [formInvalid]="formEsqueciMinhaSenha.invalid"
+        buttonType="submit"
+        [displayIcon]="false"
+        [btnBig]="true"
+        innerText="Confirmar E-mail"
+      ></app-btnlaranja>
+    </form>
+</div>

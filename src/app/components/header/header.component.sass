@@ -1,0 +1,63 @@
+@import "../../sass/_variables"
+
+.header-layout
+  margin-bottom: $media-mobile
+  border-bottom: 1px solid $cinza-claro
+
+  @media (min-width: $screen-lg-min)
+    margin-bottom: $media
+
+.container
+  background-color: $branco
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  height: 50px
+
+.header__perfil
+  position: relative
+
+.container-perfil
+  display: flex
+  align-items: center
+
+  cursor: pointer
+
+.header__img-perfil
+  margin-right: 1rem
+
+.container-nome-perfil
+  display: none
+
+  @media (min-width: 32rem)
+    display: block
+
+.header__nome-perfil
+  margin-right: .6rem
+
+  color: $roxo
+
+  font-size: 1.2rem
+  font-weight: bold
+
+.header__nav-perfil
+  position: absolute
+  top: 0
+  right: 0
+
+  width: 10.5rem
+  padding: 0.8rem 1.3rem
+  border-radius: .4rem
+  box-shadow: .4rem .4rem 1rem .5rem $preto-escuro
+
+  color: $branco
+  background-color: $branco
+
+
+  transform: translateY(70%)
+
+.header__nav-perfil__link
+  color: $cinza-escuro

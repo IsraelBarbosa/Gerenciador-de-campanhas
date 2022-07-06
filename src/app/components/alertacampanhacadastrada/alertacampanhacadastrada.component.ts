@@ -7,6 +7,8 @@ import { AlertacampanhacadastradaService } from 'src/app/services/alertacampanha
   styleUrls: ['./alertacampanhacadastrada.component.sass'],
 })
 export class AlertacampanhacadastradaComponent implements OnInit, OnDestroy {
+  setTimeoutAlertaCampanhaCriada: ReturnType<typeof setTimeout>;
+
   constructor(
     private exibirAlertaCampCadastrada: AlertacampanhacadastradaService
   ) {}
@@ -20,7 +22,7 @@ export class AlertacampanhacadastradaComponent implements OnInit, OnDestroy {
   }
 
   public fecharAlertaSetTimeout(): void {
-    setTimeout(() => {
+    this.setTimeoutAlertaCampanhaCriada = setTimeout(() => {
       (<HTMLDivElement>(
         document.querySelector('.alerta-campanha-criada')
       )).style.display = 'none';
@@ -35,5 +37,7 @@ export class AlertacampanhacadastradaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.exibirAlertaCampCadastrada.setDisplayAlertaCampanhaCadastrada(false);
+
+    clearTimeout(this.setTimeoutAlertaCampanhaCriada);
   }
 }

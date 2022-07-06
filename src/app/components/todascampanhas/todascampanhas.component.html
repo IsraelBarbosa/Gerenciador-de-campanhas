@@ -11,7 +11,7 @@
         <span class="todas-campanhas__titulo">ROI</span>
         <span class="todas-campanhas__titulo acoes">Ações</span>
       </div>
-      <div class="container-campanhas" *ngFor="let campanha of getCampanhas()">
+      <div class="container-campanhas" *ngFor="let campanha of getCampanhas(); trackBy: trackByMethod">
         <app-campanha
           [campanha]="campanha"
         ></app-campanha>

@@ -3,7 +3,7 @@ import { Campanha } from './campanha.model';
 
 @Injectable()
 export class StaticDataSource {
-  private data: Campanha[];
+  private data: Campanha[] = [];
 
   constructor() {
     this.data = new Array<Campanha>(

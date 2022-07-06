@@ -18,5 +18,9 @@ export class TodascampanhasComponent implements OnInit {
     return this.repository.getCampanha(campanha);
   }
 
+  trackByMethod(index: number, campanha: Campanha): number {
+    return campanha.id;
+  }
+
   ngOnInit(): void {}
 }

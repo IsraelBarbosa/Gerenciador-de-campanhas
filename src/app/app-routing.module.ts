@@ -10,7 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RedefinirsenhaComponent } from './pages/redefinirsenha/redefinirsenha.component';
 
 const routes: Routes = [
-  { path: '', component: ListagemdecampanhasComponent },
+  { path: '', component: LoginComponent },
   { path: 'cadastrodecampanha', component: CadastrodecampanhaComponent },
   { path: 'listagemdecampanhas', component: ListagemdecampanhasComponent },
   { path: 'editarcampanha', component: EditarcampanhaComponent },

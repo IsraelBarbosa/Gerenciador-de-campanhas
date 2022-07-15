@@ -1,4 +1,9 @@
-# Campanhas
+# Gerenciador de Campanhas
+
+O site é um gerenciador de campanhas para o profissional gestor de tráfego, com ele você pode cadastrar sua campanha informando a data de inicio/termino quanto investiu/faturou e o retorno sobre o investimento(ROI), além de visualizar o total dos dados de todas as campanhas.
+
+# Clique no link abaixo para visualizar o projeto
+(https://gerenciadordecampanhas.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
